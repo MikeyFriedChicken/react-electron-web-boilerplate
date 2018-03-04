@@ -1,0 +1,10 @@
+/node_modules
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+package.lock
+/electron/package
+/electron/prod/dist
+/output
+
+
