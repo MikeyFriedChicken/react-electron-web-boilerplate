@@ -6,5 +6,6 @@ package.lock
 /electron/package
 /electron/prod/dist
 /output
+.vscode
 
 
