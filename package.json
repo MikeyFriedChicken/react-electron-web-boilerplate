@@ -8,7 +8,9 @@
     "license": "MIT",
     "main": "main.js",
     "private": true,
-    "eslint": { "ignorePath": ".eslintignore" },
+    "eslint": {
+        "ignorePath": ".eslintignore"
+    },
     "scripts": {
         "start": "webpack-dev-server --open --config webpack.dev.js --progress --color",
         "build": "webpack --config webpack.prod.js",
@@ -25,26 +27,26 @@
         "electron-package": "electron-packager ./electron/prod react-electron-web-boilerplate --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/favicon.ico --prune=true --out=electron/package --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"React Electron & Web Boilerplate\""
     },
     "dependencies": {
-        "@types/react": "^16.0.38",
-        "@types/react-dom": "^16.0.4",
+        "@types/react": "^16.3.17",
+        "@types/react-dom": "^16.0.6",
         "babel-register": "^6.26.0",
         "flow-react": "^0.1.1",
         "history": "^4.7.2",
-        "npm": "^5.6.0",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
-        "react-hot-loader": "^4.0.0",
-        "react-redux": "^5.0.6",
-        "react-router": "^4.2.0",
-        "react-router-dom": "^4.2.2",
+        "npm": "^5.10.0",
+        "react": "^16.4.1",
+        "react-dom": "^16.4.1",
+        "react-hot-loader": "^4.3.2",
+        "react-redux": "^5.0.7",
+        "react-router": "^4.3.1",
+        "react-router-dom": "^4.3.1",
         "react-router-redux": "^4.0.8",
         "redux": "^3.7.2",
-        "redux-actions": "^2.2.1",
+        "redux-actions": "^2.4.0",
         "redux-logger": "^3.0.6",
-        "redux-thunk": "^2.2.0",
+        "redux-thunk": "^2.3.0",
         "semantic-ui-css": "^2.2.14",
-        "semantic-ui-react": "^0.78.2",
-        "source-map-support": "^0.5.3"
+        "semantic-ui-react": "^0.78.3",
+        "source-map-support": "^0.5.6"
     },
     "devDependencies": {
         "asar": "^0.14.2",
