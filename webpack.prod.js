@@ -6,6 +6,7 @@
  const path = require('path');
 
  module.exports = merge(common, {
+    mode: 'production',
     output: { path: path.resolve("./output/webpack/production"),filename: "bundle-web-prod.js"},
     plugins: [
     new UglifyJSPlugin({ sourceMap: true }),

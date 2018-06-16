@@ -10,6 +10,7 @@ const OUTPUT_DIR = path.resolve(__dirname, 'electron/dev/dist');
 // Any directories you will be adding code/files into, need to be added to this array so webpack will pick them up
 const defaultInclude = [SRC_DIR];
 module.exports = {
+  mode: 'development',
   entry: ['babel-polyfill', SRC_DIR + '/index.js'],
   resolve: {extensions: [".js", ".jsx", ".tsx", ".ts"]},
   output: {

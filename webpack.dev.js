@@ -9,6 +9,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = merge(common, 
     {
+    mode: 'development',
     output: { path: path.resolve("./output/webpack/development"),filename: "bundle-web-dev.js"},
     devtool: 'inline-source-map',
     devServer: {

@@ -12,6 +12,7 @@ const OUTPUT_DIR = path.resolve(__dirname, 'electron/prod/dist');
 const defaultInclude = [SRC_DIR];
 
 module.exports = {
+  mode: 'production',
   entry: ['babel-polyfill', SRC_DIR + '/index.js'],
   resolve: {extensions: [".js", ".jsx", ".tsx", ".ts"]},
   output: {
