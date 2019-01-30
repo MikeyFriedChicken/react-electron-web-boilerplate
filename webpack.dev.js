@@ -4,13 +4,15 @@ const webpack = require("webpack");
 const path = require('path');
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
-module.exports = merge(common, 
-    {
+module.exports = merge(common, {
     mode: 'development',
-    output: { path: path.resolve("./output/webpack/development"),filename: "bundle-web-dev.js"},
+    output: {
+        path: path.resolve("./output/webpack/development"),
+        filename: "bundle-web-dev.js",
+        publicPath: '/'
+    },
     devtool: 'inline-source-map',
     devServer: {
         hot: true,
@@ -18,7 +20,7 @@ module.exports = merge(common,
         contentBase: "./output/webpack/devserver",
         watchContentBase: true,
         port: 3001,
-        overlay: { warnings: true,errors: true},
+        overlay: {warnings: false,errors: true},
         stats: {
             assets: false,
             colors: true,
@@ -29,16 +31,14 @@ module.exports = merge(common,
             chunkModules: false,
             modules: true,
             errorDetails: true
+
         }
     },
     plugins: [
         new CleanWebpackPlugin(['./output/webpack/development']),
-        new FriendlyErrorsWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        //new webpack.NoEmitOnErrorsPlugin(), // Causes it to go to console instead of web page
         new webpack.DefinePlugin({"process.env.NODE_ENV": JSON.stringify("development")}),
         new webpack.LoaderOptionsPlugin({debug: true}),
-        //new BundleAnalyzerPlugin(),
         new DashboardPlugin()
     ],
     module: {
@@ -66,4 +66,5 @@ module.exports = merge(common,
             }
         ]
     }
-});
+}
+);
