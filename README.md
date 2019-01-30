@@ -7,6 +7,10 @@
 - The boiler plate comes with the routing history wired up to redux.
 - The folder structure shows how to reasonably seperate containers (connected components) from normal react components.
 
+# Sample main page from boilerplate
+![alt text](https://github.com/MikeyFriedChicken/react-electron-web-boilerplate/blob/master/screenshot-main.jpg)
+
+# Sample login page from boilerplate
 ![alt text](https://github.com/MikeyFriedChicken/react-electron-web-boilerplate/blob/master/screenshot-login.jpg)
 
 # Installation
