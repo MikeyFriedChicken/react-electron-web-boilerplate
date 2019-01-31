@@ -10,7 +10,8 @@
     "scripts": {
         "build": "webpack --config webpack.prod.js",
         "build-dev": "webpack --config webpack.dev.js --progress --color",
-        "electron-build": "webpack --config webpack.prod.electron.js",
+        "electron-build-prod": "webpack --config webpack.prod.electron.js",
+        "electron-build-dev": "webpack --config webpack.dev.electron.js",
         "electron-dev": "webpack-dev-server --hot --host 0.0.0.0 --config webpack.dev.electron.js --progress --color",
         "start": "webpack-dev-server --open --config webpack.dev.js --progress --color",
         "electron-package": "electron-packager ./electron/prod react-electron-web-boilerplate --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/favicon.ico --prune=true --out=electron/package --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"React Electron & Web Boilerplate\"",

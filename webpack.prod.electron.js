@@ -6,7 +6,9 @@ const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {spawn} = require('child_process');
+const {
+    spawn
+} = require('child_process');
 const OUTPUT_DIR = path.resolve(__dirname, 'electron/prod/dist');
 
 module.exports = merge(prodWebpack, {
@@ -17,6 +19,7 @@ module.exports = merge(prodWebpack, {
     },
     target: 'electron-renderer',
     devServer: {
+        contentBase: OUTPUT_DIR,
         before() {
             spawn(
                     'electron',
@@ -32,4 +35,4 @@ module.exports = merge(prodWebpack, {
     }
 });
 
-console.log(JSON.stringify(module.exports, null, '\t'));
+//console.log(JSON.stringify(module.exports, null, '\t'));

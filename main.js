@@ -11,8 +11,12 @@ let mainWindow;
 
 // Keep a reference for dev mode
 let dev = false;
+let dist
 if ( process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) || /[\\/]electron[\\/]/.test(process.execPath) ) {
   dev = true;
+  dist = path.join(__dirname, 'electron/dev/dist', 'index.html'); 
+} else {
+  dist = path.join(__dirname, 'electron/prod/dist', 'index.html'); //TODO: prod not being detected
 }
 
 function createWindow() {
@@ -26,14 +30,14 @@ function createWindow() {
   if ( dev && process.argv.indexOf('--noDevServer') === -1 ) {
     indexPath = url.format({
       protocol: 'http:',
-      host: 'localhost:8080',
+      host: 'localhost:3001',
       pathname: 'index.html',
       slashes: true
     });
   } else {
     indexPath = url.format({
       protocol: 'file:',
-      pathname: path.join(__dirname, './electron/prod/dist', 'index.html'),
+      pathname: dist,
       slashes: true
     });
   }
