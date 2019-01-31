@@ -14,7 +14,7 @@ let dev = false;
 let dist
 if ( process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) || /[\\/]electron[\\/]/.test(process.execPath) ) {
   dev = true;
-  dist = path.join(__dirname, 'electron/dev/dist', 'index.html'); 
+  dist = path.join(__dirname, 'electron/prod/dist', 'index.html'); 
 } else {
   dist = path.join(__dirname, 'electron/prod/dist', 'index.html'); //TODO: prod not being detected
 }
